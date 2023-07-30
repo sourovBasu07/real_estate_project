@@ -1,13 +1,89 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            scroll-behavior: smooth;
+        }
+    
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .swiper-horizontal {
+            overflow: visible;
+        }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+    .paddings {
+        @apply p-6 sm:p-16 md:p-8;
+    }
+    
+    .innerWidth {
+        @apply w-full 2xl:max-w-[1280px] 2xl:m-auto;
+    }
+    
+    .flexCenter {
+        @apply flex justify-center items-center flex-wrap gap-y-8;
+    }
+
+    .flexStart {
+        @apply flex justify-start items-center;
+    }
+    
+    .flexEnd {
+        @apply flex justify-end items-center;
+    }
+
+    .flexColCenter {
+        @apply flex flex-col justify-center items-center;
+    }
+    
+    .flexColStart {
+        @apply flex flex-col justify-center items-start;
+    }
+    
+    .flexColEnd {
+        @apply flex flex-col justify-center items-end;
+    }
+
+    .primaryText {
+        @apply font-bold text-[2rem] text-[#1f3e72] max-[640px]:text-[1.5rem];
+    }
+    
+    .secondaryText {
+        @apply text-[rgb(140_139_139)] text-[0.9rem];
+    }
+    
+    .orangeText {
+        @apply font-[600] text-[1.5rem] text-orange-500 max-[640px]:text-[1.2rem];
+    }
+
+    .button {
+        @apply blueGradient font-[500] text-white px-[1.4rem] py-[0.6rem] border-none rounded-[4px] transition-all duration-300 ease-in hover:cursor-pointer hover:scale-110
+    }
+}
+
+@layer utilities {
+    .blueGradient {
+        background: linear-gradient(97.05deg, #4066ff 3.76%, #2949c6 100%);
+    }
+    .orangeGradient {
+        background: linear-gradient(270deg, #ffb978 0%, #ff922d 100%);
+    }
+    .shadow {
+        box-shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
+    }
+    .cardGradient {
+        background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(136, 160, 255, 0.46) 217.91%);
+    }
+    .cardShadow {
+         box-shadow: 0px 72px 49px -51px rgba(136, 160, 255, 0.21);
+    }
 }
